@@ -12,6 +12,7 @@ setup(
     license='GNU',
     packages=['rpidevmocks'],
     install_requires=[
+        'PyHamcrest>=1.9.0',
     ],
 
     classifiers=[
