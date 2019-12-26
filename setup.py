@@ -10,7 +10,7 @@ setup(
     author='iva2k',
     author_email='iva2k@yahoo.com',
     license='GNU',
-    packages=['rpidevmocks.py'],
+    packages=['rpidevmocks'],
     install_requires=[
       'random',
       'time',
