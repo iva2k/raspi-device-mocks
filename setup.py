@@ -12,9 +12,6 @@ setup(
     license='GNU',
     packages=['rpidevmocks'],
     install_requires=[
-      'random',
-      'time',
-      'math',
     ],
 
     classifiers=[
