@@ -1,8 +1,8 @@
 RasPi Device Mocks
 ==================
-*Fake libraries for low-level device interfaces for Raspberry Pi development on a non-Linux platform*
+*Mock libraries for low-level device interfaces for Raspberry Pi development on a non-Linux platform*
 
-This package provides a set of "fake" modules to some replace low-level device-interfacing Python packages for
+This package provides a set of "mock" modules to some replace low-level device-interfacing Python packages for
 use in development or testing of code that requires those interfaces. Its original intent was to allow me
 to write & test Raspberry Pi code on a non-Linux platform, specifically in Mac OSX. Packages like [RPi.GPIO](http://sourceforge.net/projects/raspberry-gpio-python/)
 and `smbus` and others can be a pain to get installed & configured on a Mac, particularly if it's just
@@ -20,11 +20,14 @@ try:
     import RPi.GPIO as GPIO
     import smbus
     import spi
+    import spidev
 except ImportError:
-    from rpidevmocks import MockGPIO, Mock_smbusModule, MockSPI
+    print("Incompatible platform, using rpidevmocks")
+    from rpidevmocks import MockGPIO, Mock_smbusModule, MockSPI, MockSpidev
     GPIO = MockGPIO()
     smbus = Mock_smbusModule()
     spi = MockSPI()
+    spidev = MockSpidev()
 ```
 
 Below is an example of using the mocks for unit tests on code that requires one or more such packages.

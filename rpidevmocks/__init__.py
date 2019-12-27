@@ -223,7 +223,7 @@ class MockGPIO(object):
         # Returns nothing
         pass
 
-    def output(self, channel, value):
+    def output(self, channels, value):
         if not hasattr(channels, '__iter__'):
             channels = [channels, ]
         for channel in channels:
@@ -387,4 +387,27 @@ class MockSPI(object):
             res = self.spi_write_vals[addr]
         return res
 
+
+class MockSpidev(object):
+    ''' Mock of spidev module '''
+    # max_speed_hz = max_speed_hz
+    # mode = mode
+    # bits_per_word = 0
+
+    def __init__(self):
+        raise UserWarning('This mock spidev class is not entirely operational yet.')
+
+    def SpiDev(self):
+        pass
+
+    def open(self, bus_no, cs_no):
+        self.bus_no = bus_no
+        self.cs_no = cs_no
+        pass
+
+    def xfer():
+        pass
+
+    def xfer2():
+        pass
 
