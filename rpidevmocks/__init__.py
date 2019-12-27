@@ -395,7 +395,9 @@ class MockSpidev(object):
     # bits_per_word = 0
 
     def __init__(self):
-        raise UserWarning('This mock spidev class is not entirely operational yet.')
+        #raise UserWarning('This mock spidev class is not entirely operational yet.')
+        print('This mock spidev class is not entirely operational yet.')
+        pass
 
     def SpiDev(self):
         pass
