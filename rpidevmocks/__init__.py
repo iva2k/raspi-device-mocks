@@ -388,6 +388,30 @@ class MockSPI(object):
         return res
 
 
+class MockSpidevEx(object):
+    ''' Mock of spidev worker object '''
+    # max_speed_hz = max_speed_hz
+    # mode = mode
+    # bits_per_word = 0
+
+    def __init__(self):
+        #raise UserWarning('This mock spidev class is not entirely operational yet.')
+        print('Loaded MockSpidevEx.')
+        pass
+
+    def open(self, bus, cs):
+        self.bus_no = bus
+        self.cs_no = cs
+        pass
+
+    def xfer(self, data):
+        return data
+        pass
+
+    def xfer2(self, data):
+        return data
+        pass
+
 class MockSpidev(object):
     ''' Mock of spidev module '''
     # max_speed_hz = max_speed_hz
@@ -400,16 +424,5 @@ class MockSpidev(object):
         pass
 
     def SpiDev(self):
-        pass
-
-    def open(self, bus_no, cs_no):
-        self.bus_no = bus_no
-        self.cs_no = cs_no
-        pass
-
-    def xfer():
-        pass
-
-    def xfer2():
-        pass
+        return MockSpidevEx()
 

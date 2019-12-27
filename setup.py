@@ -1,7 +1,7 @@
 from distutils.core import setup
 
 setup(
-    name='raspi-device-mocks',
+    name='rpidevmocks',
     version='0.0.1',    
     description='Mock libraries for low-level device interfaces for Raspberry Pi',
     long_description = open('README.md').read(),
